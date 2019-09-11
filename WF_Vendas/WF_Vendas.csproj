@@ -52,7 +52,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -209,7 +212,24 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="ModelBase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBase.edmx</DependentUpon>
+      <LastGenOutput>ModelBase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelBase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBase.edmx</DependentUpon>
+      <LastGenOutput>ModelBase.cs</LastGenOutput>
+    </Content>
     <Content Include="packages.config" />
+    <EntityDeploy Include="ModelBase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelBase.edmx.diagram">
+      <DependentUpon>ModelBase.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -297,6 +317,9 @@
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Cliente.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -311,8 +334,35 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExtendedModel\ClienteModel.cs" />
+    <Compile Include="ExtendedModel\FornecedorModel.cs" />
+    <Compile Include="ExtendedModel\MaterialModel.cs" />
+    <Compile Include="ExtendedModel\PessoaModel.cs" />
+    <Compile Include="ExtendedModel\TipoModel.cs" />
+    <Compile Include="ExtendedModel\VendaModel.cs" />
+    <Compile Include="Fornecedor.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Material.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBase.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -329,6 +379,12 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Tipo.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Venda.cs">
+      <DependentUpon>ModelBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -337,7 +393,9 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />

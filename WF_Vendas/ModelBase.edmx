@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="DBModel.Store.Cliente" store:Type="Tables" />
+          <EntitySet Name="Fornecedor" EntityType="DBModel.Store.Fornecedor" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="DBModel.Store.Material" store:Type="Tables" />
+          <EntitySet Name="Tipo" EntityType="DBModel.Store.Tipo" store:Type="Tables" />
+          <EntitySet Name="Venda" EntityType="DBModel.Store.Venda" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="100" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="18" />
+          <Property Name="Cidade" Type="nvarchar" MaxLength="100" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cpf" Type="int" />
+        </EntityType>
+        <EntityType Name="Fornecedor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="100" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="18" />
+          <Property Name="Cidade" Type="nvarchar" MaxLength="100" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cnpj" Type="int" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="nvarchar" MaxLength="100" />
+          <Property Name="DataEntrada" Type="datetime" />
+          <Property Name="Tipo_Id" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="Fornecedor_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Venda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Fornecedor_Id" Type="int" Nullable="false" />
+          <Property Name="Cliente_Id" Type="int" Nullable="false" />
+          <Property Name="Material_Id" Type="int" Nullable="false" />
+          <Property Name="DataVenda" Type="datetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="DBModel.Cliente" />
+          <EntitySet Name="Fornecedor" EntityType="DBModel.Fornecedor" />
+          <EntitySet Name="Material" EntityType="DBModel.Material" />
+          <EntitySet Name="Tipo" EntityType="DBModel.Tipo" />
+          <EntitySet Name="Venda" EntityType="DBModel.Venda" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Telefone" Type="String" MaxLength="18" Unicode="true" FixedLength="false" />
+          <Property Name="Cidade" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Endereco" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Cpf" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Fornecedor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Telefone" Type="String" MaxLength="18" Unicode="true" FixedLength="false" />
+          <Property Name="Cidade" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Endereco" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Cnpj" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DataEntrada" Type="DateTime" Precision="3" />
+          <Property Name="Tipo_Id" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="Fornecedor_Id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Venda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Fornecedor_Id" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_Id" Type="Int32" Nullable="false" />
+          <Property Name="Material_Id" Type="Int32" Nullable="false" />
+          <Property Name="DataVenda" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="DBModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fornecedor">
+            <EntityTypeMapping TypeName="DBModel.Fornecedor">
+              <MappingFragment StoreEntitySet="Fornecedor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Cnpj" ColumnName="Cnpj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Material">
+            <EntityTypeMapping TypeName="DBModel.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="DataEntrada" ColumnName="DataEntrada" />
+                <ScalarProperty Name="Tipo_Id" ColumnName="Tipo_Id" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Fornecedor_Id" ColumnName="Fornecedor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo">
+            <EntityTypeMapping TypeName="DBModel.Tipo">
+              <MappingFragment StoreEntitySet="Tipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Venda">
+            <EntityTypeMapping TypeName="DBModel.Venda">
+              <MappingFragment StoreEntitySet="Venda">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fornecedor_Id" ColumnName="Fornecedor_Id" />
+                <ScalarProperty Name="Cliente_Id" ColumnName="Cliente_Id" />
+                <ScalarProperty Name="Material_Id" ColumnName="Material_Id" />
+                <ScalarProperty Name="DataVenda" ColumnName="DataVenda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
