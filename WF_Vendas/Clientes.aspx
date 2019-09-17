@@ -13,7 +13,12 @@
 
 <asp:Content ID="clientes" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:GridView ID="ClienteGridView" runat="server" AutoGenerateColumns="False"
-        DataKeyNames="id">
+        DataKeyNames="id"
+        onrowcancelingedit="ClienteGridView_RowCancelingEdit" 
+        onrowediting="ClienteGridView_RowEditing"             
+        onrowdeleting="ClienteGridView_RowDeleting" 
+        onrowupdating="ClienteGridView_RowUpdating"
+        OnRowCommand="ClienteGridView_RowCreate">
        
         <Columns>
             <asp:TemplateField HeaderText="Cod.">
@@ -55,8 +60,8 @@
                 </EditItemTemplate>
             </asp:TemplateField>
 
-            <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="Editar" />
-            <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Excluir" />
+            <asp:CommandField CancelText="Cancelar" DeleteText="Deletar" EditText="Editar" InsertText="Inserir" NewText="Novo" SelectText="Selecionar" ShowEditButton="True" UpdateText="Gravar" ShowInsertButton="True" />
+            <asp:CommandField DeleteText="Deletar" ShowDeleteButton="True" />
 
         </Columns>
     </asp:GridView>

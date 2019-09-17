@@ -20,5 +20,35 @@ namespace WF_Vendas
         public string Cidade { get; set; }
         public string Endereco { get; set; }
         public Nullable<int> Cpf { get; set; }
+
+        public Cliente SetNome(string nome)
+        {
+            Nome = nome;
+            return this;
+        }
+
+        public Cliente SetTelefone(string telefone)
+        {
+            Telefone = telefone;
+            return this;
+        }
+
+        public Cliente SetCidade(string cidade)
+        {
+            Cidade = cidade;
+            return this;
+        }
+
+        public Cliente SetEndereco(string endereco)
+        {
+            Endereco = endereco;
+            return this;
+        }
+
+        public Cliente SetCpf(int? cpf)
+        {
+            Cpf = cpf;
+            return this;
+        }
     }
 }
