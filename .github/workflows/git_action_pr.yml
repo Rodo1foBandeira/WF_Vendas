@@ -9,7 +9,7 @@ jobs:
   execute-commands:
     runs-on: ubuntu-latest
 
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
 
     steps:
       - name: Checkout repository
@@ -21,6 +21,6 @@ jobs:
           git checkout dev
           git reset --hard origin/master
           git push -f
-          #git checkout origin/qas
-          #git hard reset origin/master
-          #git push origin/qas
+          git checkout dev
+          git reset --hard origin/master
+          git push -f
