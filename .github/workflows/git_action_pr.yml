@@ -19,7 +19,7 @@ jobs:
         run: |
           git fetch --all
           git checkout dev
-          git hard reset origin/master
+          git reset --hard origin/master
           git push
           #git checkout origin/qas
           #git hard reset origin/master
