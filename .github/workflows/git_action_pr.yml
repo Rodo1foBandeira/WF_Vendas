@@ -20,7 +20,7 @@ jobs:
           git fetch --all
           git checkout dev
           git reset --hard origin/master
-          git push
+          git push -f
           #git checkout origin/qas
           #git hard reset origin/master
           #git push origin/qas
