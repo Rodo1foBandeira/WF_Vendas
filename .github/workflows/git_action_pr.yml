@@ -17,9 +17,9 @@ jobs:
 
       - name: Execute commands
         run: |
-          git checkout dev
-          git hard reset origin master
-          git push origin dev
-          git checkout qas
-          git hard reset origin master
-          git push origin qas
+          git checkout origin/dev
+          git hard reset origin/master
+          git push origin/dev
+          git checkout origin/qas
+          git hard reset origin/master
+          git push origin/qas
