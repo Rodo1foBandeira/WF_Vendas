@@ -1,0 +1,25 @@
+name: Executar comando quando aprovar PR
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  execute-commands:
+    runs-on: ubuntu-latest
+
+    if: github.event.pull_request.merged == true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Execute commands
+        run: |
+          git checkout dev
+          git hard reset origin master
+          git push origin dev
+          git checkout qas
+          git hard reset origin master
+          git push origin qas
