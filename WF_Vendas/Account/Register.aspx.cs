@@ -25,7 +25,7 @@ namespace WF_Vendas.Account
             {
                 continueUrl = "~/";
             }
-            Console.WriteLine("Log 0");
+            Console.WriteLine("Log 0"); // dmnd01
             Response.Redirect(continueUrl);
         }
     }
