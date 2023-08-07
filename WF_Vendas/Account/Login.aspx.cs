@@ -14,11 +14,16 @@ namespace WF_Vendas.Account
             RegisterHyperLink.NavigateUrl = "Register";
             OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
 
+            Console.WriteLine("Log 333"); // DMND02
+
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
+            Console.WriteLine("Log 1111"); // DMND02
+
+            Console.WriteLine("Log 2222"); // DMND02
         }
     }
 }
