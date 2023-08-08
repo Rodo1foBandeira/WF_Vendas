@@ -18,8 +18,12 @@ namespace WF_Vendas.Account
             if (!String.IsNullOrEmpty(returnUrl))
             {
                 Console.WriteLine(returnUrl); // Dmnd01
+                Console.WriteLine("?ReturnUrl=" + returnUrl); // Dmnd02
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
+            Console.WriteLine("Log 1"); // dmnd01
+
+            Console.WriteLine("Log 1111"); // DMND02
         }
     }
 }
