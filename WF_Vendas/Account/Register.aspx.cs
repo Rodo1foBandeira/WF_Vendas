@@ -20,6 +20,8 @@ namespace WF_Vendas.Account
         {
             FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
 
+            Console.WriteLine("Log hotfix"); // hotfix/dmnd04
+
             string continueUrl = RegisterUser.ContinueDestinationPageUrl;
             if (!OpenAuth.IsLocalUrl(continueUrl))
             {
