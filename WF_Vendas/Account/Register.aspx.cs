@@ -23,6 +23,7 @@ namespace WF_Vendas.Account
             string continueUrl = RegisterUser.ContinueDestinationPageUrl;
             if (!OpenAuth.IsLocalUrl(continueUrl))
             {
+                Console.WriteLine("Teste"); // Dmnd03
                 continueUrl = "~/";
             }
             Response.Redirect(continueUrl);
