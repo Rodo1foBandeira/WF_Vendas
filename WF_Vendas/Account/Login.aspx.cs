@@ -11,6 +11,7 @@ namespace WF_Vendas.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("hahaha"); // Dmnd01
             RegisterHyperLink.NavigateUrl = "Register";
             OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
 
