@@ -19,6 +19,7 @@ namespace WF_Vendas.Account
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
+            Console.WriteLine("Log 1"); // dmnd01
         }
     }
 }
