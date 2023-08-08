@@ -39,7 +39,7 @@ namespace WF_Vendas.Account
                     Form.Action = ResolveUrl("~/Account/Manage");
 
                     SuccessMessage =
-                        message == "ChangePwdSuccess" ? "Your password has been changed."
+                        message == "ChangePwdSuccess" ? "Your password has been changed!"
                         : message == "SetPwdSuccess" ? "Your password has been set."
                         : message == "RemoveLoginSuccess" ? "The external login was removed."
                         : String.Empty;
