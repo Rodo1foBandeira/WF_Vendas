@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpenAuthProviders.ascx.cs" Inherits="WF_Vendas.Account.OpenAuthProviders" %>
 
 <fieldset class="open-auth-providers">
-    <legend>Log in using another service</legend>
+    <legend>Log in using another service hahahahahahaha isso não pode ir para hlg e prd</legend>
     
     <asp:ListView runat="server" ID="providerDetails" ItemType="Microsoft.AspNet.Membership.OpenAuth.ProviderDetails"
         SelectMethod="GetProviderNames" ViewStateMode="Disabled">
