@@ -17,6 +17,7 @@ namespace WF_Vendas.Account
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
+                Console.WriteLine(returnUrl); // Dmnd01
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
         }
