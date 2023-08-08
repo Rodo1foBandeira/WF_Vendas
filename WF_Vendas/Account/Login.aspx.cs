@@ -21,6 +21,8 @@ namespace WF_Vendas.Account
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
+            Console.WriteLine("Log 1"); // dmnd01
+
             Console.WriteLine("Log 1111"); // DMND02
 
             Console.WriteLine("Log 2222"); // DMND02
