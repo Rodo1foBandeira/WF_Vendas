@@ -19,13 +19,12 @@ namespace WF_Vendas.Account
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
+                Console.WriteLine("?ReturnUrl=" + returnUrl); // Dmnd02
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
             Console.WriteLine("Log 1"); // dmnd01
 
             Console.WriteLine("Log 1111"); // DMND02
-
-            Console.WriteLine("Log 2222"); // DMND02
         }
     }
 }
