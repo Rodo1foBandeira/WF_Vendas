@@ -15,6 +15,7 @@ namespace WF_Vendas.Account
         {
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
             Console.WriteLine("Dmnd02"); // Dmnd02
+            Console.WriteLine("Dmnd01"); // Dmnd01
         }
 
         protected void RegisterUser_CreatedUser(object sender, EventArgs e)
