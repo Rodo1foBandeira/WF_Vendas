@@ -14,6 +14,7 @@ namespace WF_Vendas.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+            Console.WriteLine("Dmnd02"); // Dmnd02
             Console.WriteLine("Dmnd01"); // Dmnd01
         }
 
